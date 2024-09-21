@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "js/gadm41_MYS.json",
+    "format": {"type": "topojson", "feature": "gadm41_MYS_1"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME_1",
+      "from": {
+        "data": {
+          "url": "data/blood_donations_state.csv"
+        },
+        "key": "state",
+        "fields": ["donations"]
+      }
+    },
+    {
+      "filter": "datum.blood_type == 'all'"  
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "donations",
+          "as": "Total Donations"
+        }
+      ],
+      "groupby": ["state"]
+    }
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Total Donations",
+      "type": "quantitative",
+      "scale": {"type": "linear"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME_1", "type": "nominal", "title": "State"},
+      {"field": "Total Donations", "type": "quantitative"}
+    ]
+  }
+}
+
