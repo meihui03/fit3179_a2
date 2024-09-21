@@ -4,42 +4,34 @@
   "height": 400,
   "projection": {"type": "equalEarth"},
   "data": {
-    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/js/ne_10m_admin_1_states_provinces.topojson?token=GHSAT0AAAAAACX2S5MMZWSXSEL5OYIDOES6ZXO7KLQ",
+    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/js/ne_10m_admin_1_states_provinces.topojson?token=GHSAT0AAAAAACX2S5MN542UCG5XB7VFSH3SZXPBKWQ",
     "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
   },
   "transform": [
     {
-      "lookup": "properties.name", 
+      "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/blood_donations_state.csv?token=GHSAT0AAAAAACX2S5MNPMQKDW7TAMTOZZSEZXO7PCA",
+          "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/blood_donations_state.csv?token=GHSAT0AAAAAACX2S5MNPFCZCX33HLRCJQQKZXPBKIQ",
           "format": {"type": "csv"}
         },
-        "key": "state",  
-        "fields": ["donations"] 
+        "key": "state",
+        "fields": ["donations", "blood_type"]
       }
-    },
-    {
-      "aggregate": [
-        {
-          "op": "sum",
-          "field": "donations",
-          "as": "Total Donations" 
-        }
-      ],
-      "groupby": ["properties.name"]  
     }
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Total Donations", 
+      "field": "donations", 
       "type": "quantitative",
-      "scale": {"type": "linear"}  
+      "scale": {"type": "linear"}
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "Total Donations", "type": "quantitative", "title": "Total Donations"}
+      {"field": "donations", "type": "quantitative"},
+      {"field": "blood_type", "type": "nominal", "title": "Blood Type"}
+
     ]
   }
 }
