@@ -1,14 +1,14 @@
-state,donations
-Johor,599872
-Kedah,791887
-Kelantan,218279
-Kuala Lumpur,3250429
-Melaka,507981
-Negeri Sembilan,280339
-Pahang,223180
-Perak,639455
-Pulau Pinang,421508
-Sabah,485142
-Sarawak,493843
-Selangor,452062
-Terengganu,303158
+state,donations,pop
+Johor,599872,3794200
+Kedah,791887,2193600
+Kelantan,218279,1928900
+Kuala Lumpur,3250429,1746600
+Melaka,507981,937800
+Negeri Sembilan,280339,1128900
+Pahang,223180,1684700
+Perak,639455,2509000
+Pulau Pinang,421508,1774200
+Sabah,485142,3832500
+Sarawak,493843,2824700
+Selangor,452062,6555100
+Terengganu,303158,1275200

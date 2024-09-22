@@ -16,9 +16,10 @@
           "format": {"type": "csv"}
         },
         "key": "state",
-        "fields": ["donations", "blood_type"]
+        "fields": ["donations"]
       }
     }
+    
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
