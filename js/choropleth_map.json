@@ -4,7 +4,7 @@
   "height": 400,
   "projection": {"type": "equalEarth"},
   "data": {
-    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/js/ne_10m_admin_1_states_provinces.topojson",
+    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/js/ne_10m_admin_1_states_provinces.topojson?token=GHSAT0AAAAAACX2S5MN542UCG5XB7VFSH3SZXPBKWQ",
     "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
   },
   "transform": [
@@ -12,7 +12,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_data.csv",
+          "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_data.csv?token=GHSAT0AAAAAACX2S5MMAJ5FW24WD5CNMPNIZXPCL6A",
           "format": {"type": "csv"}
         },
         "key": "state",
@@ -23,9 +23,11 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Donations", 
+      "field": "donations", 
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {"type": "log",
+      "scheme": "reds"}
+      
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},
