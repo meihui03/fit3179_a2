@@ -12,7 +12,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/blood_donations_state.csv?token=GHSAT0AAAAAACX2S5MNPFCZCX33HLRCJQQKZXPBKIQ",
+          "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_data.csv?token=GHSAT0AAAAAACX2S5MMAJ5FW24WD5CNMPNIZXPCL6A",
           "format": {"type": "csv"}
         },
         "key": "state",
@@ -23,14 +23,13 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "donations", 
+      "field": "Donations", 
       "type": "quantitative",
-      "scale": {"type": "linear"}
+      "scale": {"type": "log"}
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "donations", "type": "quantitative"},
-      {"field": "blood_type", "type": "nominal", "title": "Blood Type"}
+      {"field": "donations", "type": "quantitative"}
 
     ]
   }
