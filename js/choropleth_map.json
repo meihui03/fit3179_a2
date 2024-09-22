@@ -22,7 +22,9 @@
     {"calculate": "datum.donations/datum.pop * 10000", "as": "Donations per 10,000 population"}
     
   ],
-  "mark": {"type": "geoshape"},
+  "mark": {"type": "geoshape", 
+    "stroke": "black",
+    "strokeWidth": 0.5},
   "encoding": {
     "color": {
       "field": "Donations per 10,000 population", 
