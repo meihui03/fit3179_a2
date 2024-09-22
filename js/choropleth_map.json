@@ -33,7 +33,6 @@
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "pop", "type": "quantitative", "title": "Population"},
       {"field": "Donations per 10,000 population", "type": "quantitative","format": ".2f"}
 
     ]

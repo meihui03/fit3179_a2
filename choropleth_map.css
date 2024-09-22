@@ -8,4 +8,5 @@ body {
 #choropleth_map {
     margin: 50px auto;
     width: 90%;
+    transform: translateX(5%);
 }
