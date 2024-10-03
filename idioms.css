@@ -11,3 +11,8 @@ body {
     transform: translateX(5%);
 }
 
+#multiseries_line {
+    margin: 50px auto;
+    width: 90%;   
+    height: 600px; 
+}
