@@ -1,14 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Blood Donations Based on Age Group Over Time", 
+  "title": "Blood Donations Based on Age Group Over Time",
   "data": {
     "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state_aggregated.csv"
   },
+  "width": 800,
+  "height": 500,
   "transform": [
     {
       "aggregate": [{
-        "op": "sum", 
-        "field": "donations", 
+        "op": "sum",
+        "field": "donations",
         "as": "total_donations"
       }],
       "groupby": ["year", "age_group"]
@@ -16,48 +18,70 @@
   ],
   "layer": [
     {
-      "mark": "line", 
+      "mark": "line",
       "encoding": {
         "x": {
-          "field": "year",  
-          "type": "temporal",  
+          "field": "year",
+          "type": "temporal",
           "axis": {"title": "Year"}
         },
         "y": {
-          "field": "total_donations", 
+          "field": "total_donations",
           "type": "quantitative",
           "axis": {"title": "Total Donations"}
         },
         "color": {
-          "field": "age_group",  
+          "field": "age_group",
           "type": "nominal",
           "legend": {"title": "Age Group"}
         }
       }
     },
     {
-      "mark": "point", 
+      "mark": "point",
       "encoding": {
         "x": {
-          "field": "year",  
+          "field": "year",
           "type": "temporal"
         },
         "y": {
-          "field": "total_donations", 
+          "field": "total_donations",
           "type": "quantitative"
         },
         "color": {
-          "field": "age_group",  
+          "field": "age_group",
           "type": "nominal"
         },
-        "tooltip": [  
+        "tooltip": [
           {"field": "year", "type": "temporal", "title": "Year", "format": "%Y"},
           {"field": "age_group", "type": "nominal", "title": "Age Group"},
           {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
         ]
       }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {"type": "rule", "strokeDash": [2, 2], "size": 2},
+      "encoding": {
+        "x": {"datum": {"year": 2020}},
+        "y": {"value": 0},
+        "y2": {"value": 500}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "dx": -140,
+        "dy": 170
+      },
+      "encoding": {
+        "text": {
+          "value": "Age group 17-24 donations fell sharply after 2019"
+        },
+        "x": {"datum": {"year": 2020}},
+        "y": {"value": 100}
+      }
     }
-  ],
-  "width": 800,
-  "height": 500
+  ]
 }
