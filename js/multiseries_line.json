@@ -1,25 +1,37 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Blood Donations based on age group over time",
-    "data": {
-      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state.csv"
-    },
-    "transform": [
-      {
-        "filter": "datum.state != 'Malaysia'"  
-      },
-      {
-        "fold": [
-          "17-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "other"
-        ],  
-        "as": ["age_group", "donations"]
-      }
-    ],
-    "mark": "line",
-    "encoding": {
-      "x": {"field": "date", "type": "temporal"},
-      "y": {"field": "donations", "type": "quantitative"},
-      "color": {"field": "age_group", "type": "nominal"}  
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Blood Donations Based on Age Group Over Time", 
+  "data": {
+    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state_aggregated.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{
+        "op": "sum", 
+        "field": "donations", 
+        "as": "total_donations"
+      }],
+      "groupby": ["year", "age_group"]
     }
-  }
-  
+  ],
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "year",  
+      "type": "temporal",  
+      "axis": {"title": "Year"}
+    },
+    "y": {
+      "field": "total_donations", 
+      "type": "quantitative",
+      "axis": {"title": "Total Donations"}
+    },
+    "color": {
+      "field": "age_group",  
+      "type": "nominal",
+      "legend": {"title": "Age Group"}
+    }
+  },
+  "width": 800,
+  "height": 500
+}
