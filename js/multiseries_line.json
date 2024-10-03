@@ -14,24 +14,50 @@
       "groupby": ["year", "age_group"]
     }
   ],
-  "mark": "line",
-  "encoding": {
-    "x": {
-      "field": "year",  
-      "type": "temporal",  
-      "axis": {"title": "Year"}
+  "layer": [
+    {
+      "mark": "line", 
+      "encoding": {
+        "x": {
+          "field": "year",  
+          "type": "temporal",  
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "total_donations", 
+          "type": "quantitative",
+          "axis": {"title": "Total Donations"}
+        },
+        "color": {
+          "field": "age_group",  
+          "type": "nominal",
+          "legend": {"title": "Age Group"}
+        }
+      }
     },
-    "y": {
-      "field": "total_donations", 
-      "type": "quantitative",
-      "axis": {"title": "Total Donations"}
-    },
-    "color": {
-      "field": "age_group",  
-      "type": "nominal",
-      "legend": {"title": "Age Group"}
+    {
+      "mark": "point", 
+      "encoding": {
+        "x": {
+          "field": "year",  
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total_donations", 
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "age_group",  
+          "type": "nominal"
+        },
+        "tooltip": [  
+          {"field": "year", "type": "temporal", "title": "Year", "format": "%Y"},
+          {"field": "age_group", "type": "nominal", "title": "Age Group"},
+          {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
+        ]
+      }
     }
-  },
+  ],
   "width": 800,
   "height": 500
 }
