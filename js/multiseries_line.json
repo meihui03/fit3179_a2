@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Blood Donations based on age group over time",
+    "data": {
+      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state.csv"
+    },
+    "transform": [
+      {
+        "filter": "datum.state != 'Malaysia'"  
+      },
+      {
+        "fold": [
+          "17-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "other"
+        ],  
+        "as": ["age_group", "donations"]
+      }
+    ],
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "date", "type": "temporal"},
+      "y": {"field": "donations", "type": "quantitative"},
+      "color": {"field": "age_group", "type": "nominal"}  
+    }
+  }
+  
