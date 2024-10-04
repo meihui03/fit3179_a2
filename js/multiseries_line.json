@@ -4,7 +4,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state_aggregated.csv"
   },
-  "width": 800,
+  "width": 900,
   "height": 500,
   "transform": [
     {
@@ -16,72 +16,39 @@
       "groupby": ["year", "age_group"]
     }
   ],
-  "layer": [
-    {
-      "mark": "line",
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "temporal",
-          "axis": {"title": "Year"}
-        },
-        "y": {
-          "field": "total_donations",
-          "type": "quantitative",
-          "axis": {"title": "Total Donations"}
-        },
-        "color": {
-          "field": "age_group",
-          "type": "nominal",
-          "legend": {"title": "Age Group"}
-        }
-      }
+  "params": [{
+    "name": "age_group",
+    "select": {"type": "point", "fields": ["age_group"]},
+    "bind": "legend"
+  }],
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "axis": {"title": "Year"}
+      
     },
-    {
-      "mark": "point",
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "temporal"
-        },
-        "y": {
-          "field": "total_donations",
-          "type": "quantitative"
-        },
-        "color": {
-          "field": "age_group",
-          "type": "nominal"
-        },
-        "tooltip": [
-          {"field": "year", "type": "temporal", "title": "Year", "format": "%Y"},
-          {"field": "age_group", "type": "nominal", "title": "Age Group"},
-          {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
-        ]
-      }
+    "y": {
+      "field": "total_donations",
+      "type": "quantitative",
+      "axis": {"title": "Total Donations"}
     },
-    {
-      "data": {"values": [{}]},
-      "mark": {"type": "rule", "strokeDash": [2, 2], "size": 2},
-      "encoding": {
-        "x": {"datum": {"year": 2020}},
-        "y": {"value": 0},
-        "y2": {"value": 500}
-      }
+    "color": {
+      "field": "age_group",
+      "type": "nominal",
+      "legend": {"title": "Age Group"},
+      "scale": {"scheme": "category20b"}
     },
-    {
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "dx": -140,
-        "dy": 170
-      },
-      "encoding": {
-        "text": {
-          "value": "Age group 17-24 donations fell sharply after 2019"
-        },
-        "x": {"datum": {"year": 2020}},
-        "y": {"value": 100}
-      }
-    }
-  ]
+    "opacity": {
+      "condition": {"param": "age_group", "value": 1},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "year", "type": "temporal", "title": "Year", "format": "%Y"},
+      {"field": "age_group", "type": "nominal", "title": "Age Group"},
+      {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
+    ]
+    
+  }
 }
