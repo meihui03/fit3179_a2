@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Pie Chart with percentage_tooltip",
     "data": {
-      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/donation_results.csv"
+      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/location_results.csv"
     },
     "mark": {"type": "arc", "tooltip": true},
     "encoding": {
