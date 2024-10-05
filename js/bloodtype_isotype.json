@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {"view": {"stroke": ""}},
+    "width": 800,
+    "height": 200,
+    "data": {
+      "values": [
+        {"blood_type": "A", "donation": "donation"},
+        {"blood_type": "A", "donation": "donation"},
+        {"blood_type": "A", "donation": "donation"},
+        {"blood_type": "B", "donation": "donation"},
+        {"blood_type": "B", "donation": "donation"},
+        {"blood_type": "O", "donation": "donation"},
+        {"blood_type": "O", "donation": "donation"},
+        {"blood_type": "O", "donation": "donation"},
+        {"blood_type": "O", "donation": "donation"},
+        {"blood_type": "O", "donation": "donation"},
+        {"blood_type": "AB", "donation": "donation"},
+        {"blood_type": "AB", "donation": "donation"}
+      ]
+    },
+    "transform": [
+      {
+        "calculate": "{'A': '🅰️', 'B': '🅱️', 'O': '🅾️', 'AB': '🆎'}[datum.blood_type]",
+        "as": "emoji"
+      },
+      {"window": [{"op": "rank", "as": "rank"}], "groupby": ["blood_type", "donation"]}
+    ],
+    "mark": {"type": "text", "baseline": "middle"},
+    "encoding": {
+      "x": {"field": "rank", "type": "ordinal", "axis": null},
+      "y": {"field": "blood_type", "type": "nominal", "axis": null, "sort": null},
+      "text": {"field": "emoji", "type": "nominal"},
+      "size": {"value": 65}
+    }
+  }
+  

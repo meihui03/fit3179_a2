@@ -24,6 +24,7 @@
         <p>Description for piecharts</p>
         <div class="piecharts-container">
             <div id="location_piechart"></div>
+            <div id="bloodtype_isotype"></div>
             <div id="type_blood_donation_piechart"></div>
         </div>
     </div>
@@ -48,6 +49,12 @@
         vegaEmbed("#type_blood_donation_piechart", vg_4).then(function(result) {
 
         }).catch(console.error);
+
+        var vg_5 = "js/bloodtype_isotype.json";
+        vegaEmbed("#bloodtype_isotype", vg_5).then(function(result) {
+
+        }).catch(console.error);
+
 
     </script>
 </body>
