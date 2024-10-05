@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Blood Donations Based on Age Group Over Time",
+  "title": "New Donors Based on Age Group Over Time",
   "data": {
     "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state_aggregated.csv"
   },

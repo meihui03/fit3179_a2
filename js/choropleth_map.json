@@ -20,23 +20,43 @@
       }
     },
     {"calculate": "datum.donations/datum.pop * 10000", "as": "Donations per 10,000 population"}
-    
   ],
-  "mark": {"type": "geoshape", 
-    "stroke": "black",
-    "strokeWidth": 0.5},
-  "encoding": {
-    "color": {
-      "field": "Donations per 10,000 population", 
-      "type": "quantitative",
-      "scale": {"type": "log",
-      "scheme": "reds"}
-      
+  "layer": [
+    {
+      "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5},
+      "encoding": {
+        "color": {
+          "field": "Donations per 10,000 population",
+          "type": "quantitative",
+          "scale": {"type": "log", "scheme": "reds"}
+        },
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "State"},
+          {
+            "field": "Donations per 10,000 population",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      }
     },
-    "tooltip": [
-      {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "Donations per 10,000 population", "type": "quantitative","format": ".2f"}
-
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "black",
+        "dy": -10,
+        "dx": -90
+      },
+      "transform": [
+        {"filter": "datum.properties.name === 'Kuala Lumpur'"}
+      ],
+      "encoding": {
+        "text": {"value": "Kuala Lumpur marks as the highest donations"},
+        "longitude": {"field": "geometry.coordinates[0][0][0]"},
+        "latitude": {"field": "geometry.coordinates[0][0][1]"}
+      }
+    }
+  ]
 }
