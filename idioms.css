@@ -17,7 +17,7 @@ body {
     transform: translateX(3%);
 }
 
-#population_pyramid {
+#location_piechart{
     margin: 50px auto;
     width: 90%;   
     transform: translateX(3%);
