@@ -20,6 +20,8 @@
         <p>The age group 17-24 has the highest number of new donors.</p>
 
         <div id="multiseries_line"></div>
+
+        <div id="population_pyramid"></div>
     </div>
 
     <script>
@@ -30,6 +32,11 @@
 
         var vg_2 = "js/multiseries_line.json";
         vegaEmbed("#multiseries_line", vg_2).then(function(result) {
+
+        }).catch(console.error);
+
+        var vg_3 = "js/population_pyramid.json";
+        vegaEmbed("#population_pyramid", vg_3).then(function(result) {
 
         }).catch(console.error);
     </script>
