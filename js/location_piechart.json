@@ -2,15 +2,17 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Pie Chart with percentage_tooltip",
     "data": {
-      "values": [
-        {"category": "location centre", "value": 4},
-        {"category": "location mobile", "value": 6}
-      ]
+      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/donation_results.csv"
     },
     "mark": {"type": "arc", "tooltip": true},
     "encoding": {
-      "theta": {"field": "value", "type": "quantitative", "stack": "normalize"},
-      "color": {"field": "category", "type": "nominal"}
+      "theta": {"field": "Total Donations", "type": "quantitative", "stack": "normalize"},
+      "color": {"field": "Location", "type": "nominal"},
+      "tooltip": [
+        {"field": "Location", "type": "nominal", "title": "Location"},
+        {"field": "Total Donations", "type": "quantitative", "title": "Total Donations"},
+        {"field": "Percentage", "type": "quantitative", "title": "Percentage", "format": ".2f"}
+      ]
     }
   }
   
