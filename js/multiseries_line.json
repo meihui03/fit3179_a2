@@ -38,7 +38,7 @@
       "field": "age_group",
       "type": "nominal",
       "legend": {"title": "Age Group"},
-      "scale": {"scheme": "category20b"}
+      "scale": {"scheme": "pastel1"}
     },
     "opacity": {
       "condition": {"param": "age_group", "value": 1},
