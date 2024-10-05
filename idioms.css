@@ -16,3 +16,11 @@ body {
     width: 90%;   
     height: 600px; 
 }
+
+.page {
+	width: 1000px;
+	background-color: lightgrey;
+	margin: auto;
+	padding: 50px;
+	padding-top: 35px;
+  }
