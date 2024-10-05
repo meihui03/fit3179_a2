@@ -5,33 +5,38 @@
     "height": 200,
     "data": {
       "values": [
-        {"blood_type": "A", "donation": "donation"},
-        {"blood_type": "A", "donation": "donation"},
-        {"blood_type": "A", "donation": "donation"},
-        {"blood_type": "B", "donation": "donation"},
-        {"blood_type": "B", "donation": "donation"},
-        {"blood_type": "O", "donation": "donation"},
-        {"blood_type": "O", "donation": "donation"},
-        {"blood_type": "O", "donation": "donation"},
-        {"blood_type": "O", "donation": "donation"},
-        {"blood_type": "O", "donation": "donation"},
-        {"blood_type": "AB", "donation": "donation"},
-        {"blood_type": "AB", "donation": "donation"}
+        {"blood_type": "A", "emoji": "🧑"},
+        {"blood_type": "A", "emoji": "🧑"},
+        {"blood_type": "A", "emoji": "🧑"},
+        {"blood_type": "A", "emoji": "🧑"},
+        {"blood_type": "B", "emoji": "🧑"},
+        {"blood_type": "B", "emoji": "🧑"},
+        {"blood_type": "B", "emoji": "🧑"},
+        {"blood_type": "AB", "emoji": "🧑"},
+        {"blood_type": "AB", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"},
+        {"blood_type": "O", "emoji": "🧑"}
       ]
     },
     "transform": [
       {
-        "calculate": "{'A': '🅰️', 'B': '🅱️', 'O': '🅾️', 'AB': '🆎'}[datum.blood_type]",
-        "as": "emoji"
-      },
-      {"window": [{"op": "rank", "as": "rank"}], "groupby": ["blood_type", "donation"]}
+        "window": [{"op": "rank", "as": "rank"}], 
+        "groupby": ["blood_type", "emoji"]
+      }
     ],
     "mark": {"type": "text", "baseline": "middle"},
     "encoding": {
       "x": {"field": "rank", "type": "ordinal", "axis": null},
       "y": {"field": "blood_type", "type": "nominal", "axis": null, "sort": null},
       "text": {"field": "emoji", "type": "nominal"},
-      "size": {"value": 65}
+      "size": {"value": 45}
     }
   }
   

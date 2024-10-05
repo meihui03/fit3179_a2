@@ -40,8 +40,8 @@
 }
 
 /* Individual pie chart styling */
-#location_piechart, #type_blood_donation_piechart, #bloodtype_isotype {
-    width: 48%; /* Each pie chart takes about half the space */
+#location_piechart, #type_blood_donation_piechart {
+    width: 50%; /* Each pie chart takes about half the space */
     margin: 0; /* Reset margin for side by side layout */
     transform: translateX(0); /* Remove extra transform */
 }
