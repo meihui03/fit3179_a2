@@ -43,7 +43,8 @@
 /* Styling for the choropleth map */
 #choropleth_map {
     width: 60%; /* Takes up 60% of the container */
-    margin-right: 40px; /* Increase the space between the map and the description */
+    margin-right: 70px; /* Increase the space between the map and the description */
+    margin-left: -30px; 
 }
 
 /* Styling for the description on the right */
