@@ -12,7 +12,7 @@
         "contains": "padding"
       },
       "view": {"stroke": "transparent"},
-      "background": "transparent" 
+      "background": "transparent"
     },
     "encoding": {
       "y": {
@@ -65,6 +65,32 @@
             "field": "Total Donations",
             "sort": "-x",
             "legend": false
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": -100,
+          "dy": 40,
+          "fontSize": 14,
+          "fontWeight": "bold"
+        },
+        "transform": [
+          {"filter": "datum['Blood Donation Type'] == 'Whole Blood'"}
+        ],
+        "encoding": {
+          "text": {
+            "value": "Highest Donations"
+          },
+          "x": {
+            "field": "Total Donations",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Blood Donation Type",
+            "type": "nominal"
           }
         }
       }

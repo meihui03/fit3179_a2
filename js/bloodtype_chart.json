@@ -15,7 +15,7 @@
         "bind": {
           "input": "select",
           "options": [null, "Centre", "Mobile"],
-          "name": "Select Location: "
+          "name": "Location Type: "
         }
       }
     },
