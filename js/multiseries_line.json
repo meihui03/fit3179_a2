@@ -27,7 +27,7 @@
       "field": "year",
       "type": "temporal",
       "axis": {"title": "Year"}
-      
+
     },
     "y": {
       "field": "total_donations",
@@ -38,7 +38,7 @@
       "field": "age_group",
       "type": "nominal",
       "legend": {"title": "Age Group"},
-      "scale": {"scheme": "pastel1"}
+      "scale": {"scheme": "tableau20"}
     },
     "opacity": {
       "condition": {"param": "age_group", "value": 1},
@@ -49,6 +49,6 @@
       {"field": "age_group", "type": "nominal", "title": "Age Group"},
       {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
     ]
-    
+
   }
 }
