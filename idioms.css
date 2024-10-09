@@ -25,7 +25,14 @@
 }
 
 /* Styling for the choropleth and line chart */
-#multiseries_line, #lolilpopchart, #bloodtype_chart {
+/* #multiseries_line, #lolilpopchart, #bloodtype_chart {
+    margin: 50px auto;
+    width: 90%;
+    transform: translateX(3%);
+} */
+
+/* Styling for the choropleth and line chart */
+#multiseries_line {
     margin: 50px auto;
     width: 90%;
     transform: translateX(3%);
@@ -67,8 +74,9 @@
     width: 90%; /* Adjust as needed for the container */
 }
 
+
 /* Individual pie chart styling */
-#location_piechart, #type_blood_donation_piechart {
+#lolilpopchart, #bloodtype_chart {
     width: 50%; /* Each pie chart takes about half the space */
     margin: 0; /* Reset margin for side by side layout */
     transform: translateX(0); /* Remove extra transform */

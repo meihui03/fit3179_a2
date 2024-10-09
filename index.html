@@ -30,14 +30,21 @@
         <div id="multiseries_line"></div>
 
         <p>Description</p>
-        <div class="piecharts-container">
+        <!-- <div class="piecharts-container">
             <div id="location_piechart"></div>
             <div id="type_blood_donation_piechart"></div>
-        </div>
+        </div> -->
 
         <!-- <div id="bloodtype_isotype"></div> -->
-        <div id="lolilpopchart"></div>
-        <div id="bloodtype_chart"></div>
+
+        <div class="piecharts-container">
+            <div id="bloodtype_chart"></div>
+            <div id="lolilpopchart"></div>
+        </div>
+
+        <!-- <div id="bloodtype_chart"></div>
+
+        <div id="lolilpopchart"></div> -->
 
     </div>
 
@@ -52,15 +59,15 @@
 
         }).catch(console.error);
 
-        var vg_3 = "js/location_piechart.json";
-        vegaEmbed("#location_piechart", vg_3).then(function(result) {
+        // var vg_3 = "js/location_piechart.json";
+        // vegaEmbed("#location_piechart", vg_3).then(function(result) {
 
-        }).catch(console.error);
+        // }).catch(console.error);
 
-        var vg_4 = "js/bloodtype_piechart.json";
-        vegaEmbed("#type_blood_donation_piechart", vg_4).then(function(result) {
+        // var vg_4 = "js/bloodtype_piechart.json";
+        // vegaEmbed("#type_blood_donation_piechart", vg_4).then(function(result) {
 
-        }).catch(console.error);
+        // }).catch(console.error);
 
         var vg_6 = "js/lolilpopchart.json";
         vegaEmbed("#lolilpopchart", vg_6).then(function(result) {
