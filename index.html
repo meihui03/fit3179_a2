@@ -27,7 +27,8 @@
             <div id="type_blood_donation_piechart"></div>
         </div>
 
-        <div id="bloodtype_isotype"></div>
+        <!-- <div id="bloodtype_isotype"></div> -->
+        <div id="lolilpopchart"></div>
     </div>
 
     <script>
@@ -51,10 +52,16 @@
 
         }).catch(console.error);
 
-        var vg_5 = "js/bloodtype_isotype.json";
-        vegaEmbed("#bloodtype_isotype", vg_5).then(function(result) {
+        // var vg_5 = "js/bloodtype_isotype.json";
+        // vegaEmbed("#bloodtype_isotype", vg_5).then(function(result) {
+
+        // }).catch(console.error);
+
+        var vg_6 = "js/lolilpopchart.json";
+        vegaEmbed("#lolilpopchart", vg_6).then(function(result) {
 
         }).catch(console.error);
+
 
 
     </script>

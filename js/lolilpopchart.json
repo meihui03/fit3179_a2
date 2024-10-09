@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Lollipop chart for blood donation types and total donations",
+    "data": {
+      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/donation_results_by_type.csv"
+    },
+    "width": 800,
+    "height": 300,
+    "config": {
+      "autosize": {
+        "type": "fit",
+        "contains": "padding"
+      },
+      "view": {"stroke": "transparent"}
+    },
+    "encoding": {
+      "y": {
+        "field": "Blood Donation Type",
+        "type": "nominal",
+        "sort": "-x",
+        "axis": {
+          "domain": false,
+          "title": null,
+          "ticks": false,
+          "labelFont": "Candara",
+          "labelFontSize": 16,
+          "labelPadding": 10,
+          "labelColor": "#605e5c"
+        }
+      },
+      "x": {
+        "field": "Total Donations",
+        "type": "quantitative",
+        "axis": {
+          "title": "Total Donations"
+        }
+      },
+      "color": {"value": "#d9b300"}
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rule",
+          "tooltip": true,
+          "strokeWidth": 2,
+          "opacity": 0.5
+        }
+      },
+      {
+        "mark": {
+          "type": "circle",
+          "tooltip": true,
+          "size": 200
+        },
+        "encoding": {
+          "size": {
+            "field": "Total Donations",
+            "scale": {
+              "range": [100, 700]
+            },
+            "legend": false
+          },
+          "opacity": {
+            "field": "Total Donations",
+            "sort": "-x",
+            "legend": false
+          }
+        }
+      }
+    ]
+  }
+  
