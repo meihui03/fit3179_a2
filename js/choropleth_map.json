@@ -29,9 +29,15 @@
         "color": {
           "field": "Donations per 10,000 population",
           "type": "quantitative",
-          "scale": {"type": "threshold",
-                    "domain": [1000, 2000, 3000, 10000],
-                    "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]}
+          "scale": {
+            "type": "threshold",
+            "domain": [1000, 2000, 3000, 10000],
+            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+          },
+          "legend": {
+            "title": "Donations per 10,000 population",
+            "orient": "top"
+          }
         },
         "tooltip": [
           {"field": "properties.name", "type": "nominal", "title": "State"},

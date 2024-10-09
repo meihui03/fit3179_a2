@@ -1,5 +1,5 @@
 .page {
-    width: 1000px;
+    width: 1200px;
     background-color: rgb(252, 231, 231);
     margin: auto;
     padding: 50px;
@@ -25,10 +25,36 @@
 }
 
 /* Styling for the choropleth and line chart */
-#choropleth_map, #multiseries_line, #lolilpopchart, #bloodtype_dotline {
+#multiseries_line, #lolilpopchart, #bloodtype_chart {
     margin: 50px auto;
     width: 90%;
     transform: translateX(3%);
+}
+
+/* Container for choropleth map and description */
+.container {
+    display: flex; /* Aligns items side by side */
+    justify-content: space-between; /* Adds space between the map and description */
+    align-items: flex-start; /* Align items at the top */
+    margin: 50px auto; /* Centers the container */
+    width: 90%; /* Adjust the width */
+}
+
+/* Styling for the choropleth map */
+#choropleth_map {
+    width: 60%; /* Takes up 60% of the container */
+    margin-right: 40px; /* Increase the space between the map and the description */
+}
+
+/* Styling for the description on the right */
+#description {
+    width: 35%; /* Takes up 35% of the container */
+    text-align: left; /* Align text to the left */
+    font-size: 16px;
+    color: #333; /* Ensures good contrast for text */
+    line-height: 1.6; /* Improves readability */
+    font-family: Arial, sans-serif;
+    margin-left: 80px; /* Adds space between description and map */
 }
 
 /* Wrapper to align pie charts side by side */
