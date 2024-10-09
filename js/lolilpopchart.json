@@ -11,7 +11,8 @@
         "type": "fit",
         "contains": "padding"
       },
-      "view": {"stroke": "transparent"}
+      "view": {"stroke": "transparent"},
+      "background": "transparent" 
     },
     "encoding": {
       "y": {

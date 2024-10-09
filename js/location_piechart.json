@@ -5,6 +5,7 @@
       "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/location_results.csv"
     },
     "mark": {"type": "arc", "tooltip": true},
+    "background": "transparent", 
     "encoding": {
       "theta": {"field": "Total Donations", "type": "quantitative", "stack": "normalize"},
       "color": {"field": "Location", "type": "nominal"},
