@@ -67,7 +67,7 @@
 }
 
 /* Wrapper to align pie charts side by side */
-.piecharts-container {
+.charts-container {
     display: flex;
     justify-content: space-between; /* Adjust spacing between the charts */
     margin: 50px auto;
