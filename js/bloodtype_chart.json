@@ -3,10 +3,21 @@
     "description": "Stacked bar chart showing blood donations by location and blood type",
     "width": 300,
     "height": 400,
-    "background": "transparent" ,
+    "background": "transparent",
     "data": {
       "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_donations_for_radar_chart.csv",
       "format": {"type": "csv"}
+    },
+    "selection": {
+      "LocationFilter": {
+        "type": "single",
+        "fields": ["Location"],
+        "bind": {
+          "input": "select",
+          "options": [null, "Centre", "Mobile"],
+          "name": "Select Location: "
+        }
+      }
     },
     "mark": "bar",
     "encoding": {
@@ -25,6 +36,18 @@
         "field": "Location",
         "type": "nominal",
         "title": "Location"
+      },
+      "tooltip": [
+        {"field": "Blood_Type", "type": "nominal", "title": "Blood Type"},
+        {"field": "Location", "type": "nominal", "title": "Location"},
+        {"field": "Total_Donations", "type": "quantitative", "title": "Total Donations"}
+      ],
+      "opacity": {
+        "condition": {
+          "selection": "LocationFilter",
+          "value": 1
+        },
+        "value": 0.2
       }
     }
   }
