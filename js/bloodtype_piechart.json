@@ -1,15 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Pie Chart with percentage_tooltip for blood donation types",
+  "description": "Pie Chart with percentage_tooltip for blood types",
   "data": {
-    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/donation_results_by_type.csv"
+    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/total_donations_by_blood_type.csv"
   },
+  "background": "transparent",
   "mark": {"type": "arc", "tooltip": true},
   "encoding": {
     "theta": {"field": "Total Donations", "type": "quantitative", "stack": "normalize"},
-    "color": {"field": "Blood Donation Type", "type": "nominal"},
+    "color": {"field": "Blood Type", "type": "nominal"},
     "tooltip": [
-      {"field": "Blood Donation Type", "type": "nominal", "title": "Donation Type"},
+      {"field": "Blood Type", "type": "nominal", "title": "Blood Type"},
       {"field": "Total Donations", "type": "quantitative", "title": "Total Donations"},
       {"field": "Percentage", "type": "quantitative", "title": "Percentage", "format": ".2f"}
     ]
