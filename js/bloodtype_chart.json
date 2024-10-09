@@ -1,172 +1,31 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "description": "A radar chart showing blood donations by location (centre vs mobile) and blood type.",
-    "width": 400,
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stacked bar chart showing blood donations by location and blood type",
+    "width": 500,
     "height": 400,
-    "padding": 40,
-    "autosize": {"type": "none", "contains": "padding"},
-  
-    "signals": [
-      {"name": "radius", "update": "width / 2"}
-    ],
-  
-    "data": [
-      {
-        "name": "table",
-        "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_donations_for_radar_chart.csv",
-        "format": {"type": "csv"}
-      },
-      {
-        "name": "keys",
-        "source": "table",
-        "transform": [
-          {
-            "type": "aggregate",
-            "groupby": ["Blood_Type"]
-          }
-        ]
-      }
-    ],
-  
-    "scales": [
-      {
-        "name": "angular",
-        "type": "point",
-        "range": {"signal": "[-PI, PI]"},
-        "padding": 0.5,
-        "domain": {"data": "table", "field": "Blood_Type"}
-      },
-      {
-        "name": "radial",
-        "type": "linear",
-        "range": {"signal": "[0, radius]"},
-        "zero": true,
-        "nice": false,
-        "domain": {"data": "table", "field": "Total_Donations"},
-        "domainMin": 0
-      },
-      {
-        "name": "color",
-        "type": "ordinal",
-        "domain": {"data": "table", "field": "Location"},
-        "range": {"scheme": "category10"}
-      }
-    ],
-  
-    "encode": {
-      "enter": {
-        "x": {"signal": "radius"},
-        "y": {"signal": "radius"}
-      }
+    "background": "transparent" ,
+    "data": {
+      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_donations_for_radar_chart.csv",
+      "format": {"type": "csv"}
     },
-  
-    "marks": [
-      {
-        "type": "group",
-        "name": "categories",
-        "zindex": 1,
-        "from": {
-          "facet": {"data": "table", "name": "facet", "groupby": ["Location"]}
-        },
-        "marks": [
-          {
-            "type": "line",
-            "name": "category-line",
-            "from": {"data": "facet"},
-            "encode": {
-              "enter": {
-                "interpolate": {"value": "linear-closed"},
-                "x": {"signal": "scale('radial', datum.Total_Donations) * cos(scale('angular', datum.Blood_Type))"},
-                "y": {"signal": "scale('radial', datum.Total_Donations) * sin(scale('angular', datum.Blood_Type))"},
-                "stroke": {"scale": "color", "field": "Location"},
-                "strokeWidth": {"value": 1},
-                "fill": {"scale": "color", "field": "Location"},
-                "fillOpacity": {"value": 0.1}
-              }
-            }
-          },
-          {
-            "type": "text",
-            "name": "value-text",
-            "from": {"data": "category-line"},
-            "encode": {
-              "enter": {
-                "x": {"signal": "datum.x"},
-                "y": {"signal": "datum.y"},
-                "text": {"signal": "datum.datum.Total_Donations"},
-                "align": {"value": "center"},
-                "baseline": {"value": "middle"},
-                "fill": {"value": "black"}
-              }
-            }
-          }
-        ]
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Blood_Type",
+        "type": "nominal",
+        "title": "Blood Type",
+        "axis": {"labelAngle": 0}
       },
-      {
-        "type": "rule",
-        "name": "radial-grid",
-        "from": {"data": "keys"},
-        "zindex": 0,
-        "encode": {
-          "enter": {
-            "x": {"value": 0},
-            "y": {"value": 0},
-            "x2": {"signal": "radius * cos(scale('angular', datum.Blood_Type))"},
-            "y2": {"signal": "radius * sin(scale('angular', datum.Blood_Type))"},
-            "stroke": {"value": "lightgray"},
-            "strokeWidth": {"value": 1}
-          }
-        }
+      "y": {
+        "field": "Total_Donations",
+        "type": "quantitative",
+        "title": "Total Donations"
       },
-      {
-        "type": "text",
-        "name": "key-label",
-        "from": {"data": "keys"},
-        "zindex": 1,
-        "encode": {
-          "enter": {
-            "x": {"signal": "(radius + 5) * cos(scale('angular', datum.Blood_Type))"},
-            "y": {"signal": "(radius + 5) * sin(scale('angular', datum.Blood_Type))"},
-            "text": {"field": "Blood_Type"},
-            "align": [
-              {
-                "test": "abs(scale('angular', datum.Blood_Type)) > PI / 2",
-                "value": "right"
-              },
-              {
-                "value": "left"
-              }
-            ],
-            "baseline": [
-              {
-                "test": "scale('angular', datum.Blood_Type) > 0", "value": "top"
-              },
-              {
-                "test": "scale('angular', datum.Blood_Type) == 0", "value": "middle"
-              },
-              {
-                "value": "bottom"
-              }
-            ],
-            "fill": {"value": "black"},
-            "fontWeight": {"value": "bold"}
-          }
-        }
-      },
-      {
-        "type": "line",
-        "name": "outer-line",
-        "from": {"data": "radial-grid"},
-        "encode": {
-          "enter": {
-            "interpolate": {"value": "linear-closed"},
-            "x": {"field": "x2"},
-            "y": {"field": "y2"},
-            "stroke": {"value": "lightgray"},
-            "strokeWidth": {"value": 1}
-          }
-        }
+      "color": {
+        "field": "Location",
+        "type": "nominal",
+        "title": "Location"
       }
-    ]
+    }
   }
   
