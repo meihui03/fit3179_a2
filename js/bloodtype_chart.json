@@ -15,7 +15,7 @@
         "bind": {
           "input": "select",
           "options": [null, "Centre", "Mobile"],
-          "name": "Location Type: "
+          "name": "Select Location: "
         }
       }
     },
@@ -35,13 +35,12 @@
       "color": {
         "field": "Location",
         "type": "nominal",
-        "title": "Location"
+        "title": "Location",
+        "scale": {
+          "domain": ["Centre", "Mobile"], 
+          "range": ["#F7C6BB", "#F7BBDD"] 
+        }
       },
-      "tooltip": [
-        {"field": "Blood_Type", "type": "nominal", "title": "Blood Type"},
-        {"field": "Location", "type": "nominal", "title": "Location"},
-        {"field": "Total_Donations", "type": "quantitative", "title": "Total Donations"}
-      ],
       "opacity": {
         "condition": {
           "selection": "LocationFilter",
