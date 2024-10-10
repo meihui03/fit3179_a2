@@ -37,10 +37,15 @@
         "type": "nominal",
         "title": "Location",
         "scale": {
-          "domain": ["Centre", "Mobile"], 
-          "range": ["#F7C6BB", "#F7BBDD"] 
+          "domain": ["Centre", "Mobile"],
+          "range": ["#F7C6BB", "#F7BBDD"]
         }
       },
+      "tooltip": [
+        {"field": "Blood_Type", "type": "nominal", "title": "Blood Type"},
+        {"field": "Location", "type": "nominal", "title": "Location"},
+        {"field": "Total_Donations", "type": "quantitative", "title": "Total Donations"}
+      ],
       "opacity": {
         "condition": {
           "selection": "LocationFilter",
