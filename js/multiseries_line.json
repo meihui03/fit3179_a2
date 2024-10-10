@@ -3,8 +3,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state_aggregated.csv"
   },
-  "width": 800,
-  "height": 300,
+  "width": 850,
+  "height": 400,
   "background": "transparent", 
   "transform": [
     {

@@ -34,8 +34,8 @@
 /* Styling for the choropleth and line chart */
 #multiseries_line {
     margin: 50px auto;
-    width: 90%;
-    transform: translateX(3%);
+    /* width: 90%; */
+    transform: translateX(2%);
 }
 
 /* Container for choropleth map and description */
@@ -49,10 +49,15 @@
 }
 
 /* Styling for the choropleth map */
-#choropleth_map {
-    width: 60%; /* Takes up 60% of the container */
-    margin-right: 75px; /* Increase the space between the map and the description */
-    margin-left: -30px; 
+/* #choropleth_map { */
+    /* width: 60%; Takes up 60% of the container */
+    /* margin-right: 75px; Increase the space between the map and the description */
+    /* margin-left: -30px;  */
+/* } */
+
+#choropleth_map { 
+    margin: 50px auto;
+    margin-left: 100px; /* Adds space between description and map */
 }
 
 /* Styling for the description on the right */

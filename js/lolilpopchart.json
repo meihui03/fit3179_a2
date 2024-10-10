@@ -72,7 +72,7 @@
         "mark": {
           "type": "text",
           "align": "left",
-          "dx": -100,
+          "dx": -140,
           "dy": 40,
           "fontSize": 14,
           "fontWeight": "bold"
@@ -82,7 +82,7 @@
         ],
         "encoding": {
           "text": {
-            "value": "Highest Donations"
+            "value": "Highest Donations Type"
           },
           "x": {
             "field": "Total Donations",

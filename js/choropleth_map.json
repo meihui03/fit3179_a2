@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
-  "height": 400,
+  "width": 850,
+  "height": 450,
   "background": "transparent", 
   "projection": {"type": "equalEarth"},
   "data": {
@@ -35,8 +35,7 @@
             "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
           },
           "legend": {
-            "title": "Donations per 10,000 population",
-            "orient": "top"
+            "title": "Donations per 10,000 population"
           }
         },
         "tooltip": [
@@ -47,24 +46,6 @@
             "format": ".2f"
           }
         ]
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "color": "black",
-        "dy": -10,
-        "dx": -90
-      },
-      "transform": [
-        {"filter": "datum.properties.name === 'Kuala Lumpur'"}
-      ],
-      "encoding": {
-        "text": {"value": "Kuala Lumpur marks as the highest donations"},
-        "longitude": {"field": "geometry.coordinates[0][0][0]"},
-        "latitude": {"field": "geometry.coordinates[0][0][1]"}
       }
     }
   ]
