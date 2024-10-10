@@ -86,3 +86,10 @@
     margin: 0; /* Reset margin for side by side layout */
     transform: translateX(0); /* Remove extra transform */
 }
+
+.left-aligned-links {
+    text-align: left;  /* Aligns the links to the left */
+    margin-left: 10px; /* Optional: Adds some spacing from the left */
+    font-size: 10px;   /* Adjust the font size as needed */
+    line-height: 1.5;  /* Adds some spacing between lines for better readability */
+}
