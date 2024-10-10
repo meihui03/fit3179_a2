@@ -93,3 +93,57 @@
     font-size: 10px;   /* Adjust the font size as needed */
     line-height: 1.5;  /* Adds some spacing between lines for better readability */
 }
+
+.blue-text {
+    color: #3b32e6;
+    font-weight: bold;
+}
+
+.green-text {
+    color: rgb(15, 183, 15);
+    font-weight: bold;
+}
+
+.pink-text {
+    color: pink;
+    font-weight: bold;
+}
+
+.cream-text {
+    color: #F7C6BB;
+    font-weight: bold;
+}
+
+.yellow-text {
+    color: #e7c95e;
+    font-weight: bold;
+}
+
+.left-aligned-container {
+    width: 80%;              /* Set the width of the container */
+    margin: 30px auto 20px;   /* Add 30px of whitespace on top, center the container horizontally, and 20px bottom margin */
+    text-align: left;         /* Align the text to the left */
+    padding: 15px;            /* Optional: Add some padding for spacing */
+    border-radius: 5px;       /* Optional: Add rounded corners */
+    font-size: 16px;          /* Adjust font size as needed */
+    line-height: 1.6;         /* Improve readability with better line spacing */
+}
+
+.two-column-container {
+    display: flex;           /* Flexbox layout for two columns */
+    justify-content: space-between;  /* Distribute space between columns */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px;               /* Optional: Add space between the columns */
+    margin-top: 20px;        /* Optional: Add some space above the container */
+}
+
+.left-text {
+    width: 45%;              /* Set the width of the left column */
+    text-align: left;         /* Align the text to the left */
+}
+
+.right-text {
+    width: 45%;              /* Set the width of the right column */
+    text-align: left;         /* Align the text to the left */
+}
+

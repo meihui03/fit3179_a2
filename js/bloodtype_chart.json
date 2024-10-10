@@ -3,7 +3,6 @@
     "description": "Stacked bar chart showing blood donations by location and blood type",
     "width": 300,
     "height": 400,
-    "title": "Total Donations by Blood Type",
     "background": "transparent",
     "data": {
       "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/preprocessed_donations_for_radar_chart.csv",

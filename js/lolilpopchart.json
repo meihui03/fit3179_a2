@@ -6,7 +6,6 @@
     },
     "width": 600,
     "height": 400,
-    "title": "Total Donations by Blood Donation Type",
     "config": {
       "autosize": {
         "type": "fit",
