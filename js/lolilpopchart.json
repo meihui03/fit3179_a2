@@ -36,7 +36,13 @@
           "title": "Total Donations"
         }
       },
-      "color": {"value": "#d9b300"}
+      "color": {
+        "condition": {
+          "test": "datum['Blood Donation Type'] == 'Whole Blood'",
+          "value": "#F4B21E"   
+        },
+        "value": "#979680"    
+      }
     },
     "layer": [
       {
