@@ -21,10 +21,6 @@
         "sort": "-x",
         "axis": {
           "domain": false,
-          "title": null,
-          "ticks": false,
-          "labelFont": "Candara",
-          "labelFontSize": 16,
           "labelPadding": 10,
           "labelColor": "#605e5c"
         }
