@@ -38,7 +38,7 @@
         "title": "Location",
         "scale": {
           "domain": ["Centre", "Mobile"],
-          "range": ["#F7C6BB", "#F7BBDD"]
+          "range": ["#fc9272", "#6baed6"] 
         }
       },
       "tooltip": [
