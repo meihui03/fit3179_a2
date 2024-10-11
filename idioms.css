@@ -65,18 +65,9 @@
     margin-left: 80px; /* Adds space between description and map */
 }
 
-/* Wrapper to align pie charts side by side */
-.charts-container {
-    display: flex;
-    justify-content: space-between; /* Adjust spacing between the charts */
-    margin: 50px auto;
-    width: 90%; /* Adjust as needed for the container */
-}
-
-
 /* Individual pie chart styling */
 #lolilpopchart, #bloodtype_chart {
-    width: 50%; /* Each pie chart takes about half the space */
+    width: 45%; /* Each pie chart takes about half the space */
     margin: 0; /* Reset margin for side by side layout */
     transform: translateX(0); /* Remove extra transform */
 }
@@ -115,7 +106,7 @@
 
 .left-aligned-container {
     width: 80%;              /* Set the width of the container */
-    margin: 30px auto 20px;   /* Add 30px of whitespace on top, center the container horizontally, and 20px bottom margin */
+    margin: auto;   
     text-align: left;         /* Align the text to the left */
     padding: 15px;            /* Optional: Add some padding for spacing */
     border-radius: 5px;       /* Optional: Add rounded corners */
@@ -127,9 +118,21 @@
     display: flex;           /* Flexbox layout for two columns */
     justify-content: space-between;  /* Distribute space between columns */
     align-items: flex-start; /* Align items at the top */
-    gap: 20px;               /* Optional: Add space between the columns */
+    gap: 130px;               /* Optional: Add space between the columns */
     margin-top: 20px;        /* Optional: Add some space above the container */
+    width: 90%; /* Reduce this to make the container smaller */
+    margin: 0 auto; /* Center the container */
 }
+
+/* Wrapper to align pie charts side by side */
+.charts-container {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between the charts */
+    gap: 40px; /* This will increase the space between the charts */
+    width: 85%; /* Reduce this to make the container smaller */
+    margin: 50px auto; /* Center the container and add 50px whitespace on top */
+}
+
 
 .left-text {
     width: 45%;              /* Set the width of the left column */
