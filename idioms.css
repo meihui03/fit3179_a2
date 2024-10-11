@@ -24,6 +24,14 @@
     font-family: Arial, sans-serif;
 }
 
+.page h1 {
+    font-family: "Merriweather", serif; /* Using the Merriweather font */
+    font-size: 45px; 
+    color: #080808; /* Ensure it's visible and matches other text */
+    margin-bottom: 20px; 
+    font-weight: 700; /* Bold weight */
+}
+
 /* Styling for the choropleth and line chart */
 #multiseries_line {
     margin: 50px auto;
