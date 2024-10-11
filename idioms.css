@@ -25,13 +25,6 @@
 }
 
 /* Styling for the choropleth and line chart */
-/* #multiseries_line, #lolilpopchart, #bloodtype_chart {
-    margin: 50px auto;
-    width: 90%;
-    transform: translateX(3%);
-} */
-
-/* Styling for the choropleth and line chart */
 #multiseries_line {
     margin: 50px auto;
     /* width: 90%; */
@@ -47,13 +40,6 @@
     margin-top: 85px; /* Increase this value to add more space on top */
     width: 90%; /* Adjust the width */
 }
-
-/* Styling for the choropleth map */
-/* #choropleth_map { */
-    /* width: 60%; Takes up 60% of the container */
-    /* margin-right: 75px; Increase the space between the map and the description */
-    /* margin-left: -30px;  */
-/* } */
 
 #choropleth_map { 
     margin: 50px auto;
