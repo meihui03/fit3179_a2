@@ -31,7 +31,7 @@
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [1000, 2000, 3000, 10000],
+            "domain": [500, 1500, 5000, 10000],
             "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
           },
           "legend": {
