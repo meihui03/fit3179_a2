@@ -104,6 +104,16 @@
     font-weight: bold;
 }
 
+.darkbrown-text {
+    color: #662506;
+    font-weight: bold;
+}
+
+.brown-text {
+    color: #a63603;
+    font-weight: bold;
+}
+
 .left-aligned-container {
     width: 80%;              /* Set the width of the container */
     margin: auto;   
