@@ -5,7 +5,7 @@
   },
   "width": 900,
   "height": 400,
-  "background": "transparent", 
+  "background": "transparent",
   "transform": [
     {
       "aggregate": [{
@@ -16,18 +16,15 @@
       "groupby": ["year", "age_group"]
     }
   ],
-  "params": [{
-    "name": "age_group",
-    "select": {"type": "point", "fields": ["age_group"]},
-    "bind": "legend"
-  }],
-  "mark": "line",
+  "mark": {
+    "type": "line",
+    "point": {"filled": false, "fill": "white"}
+  },
   "encoding": {
     "x": {
       "field": "year",
       "type": "temporal",
       "axis": {"title": "Year"}
-
     },
     "y": {
       "field": "total_donations",
@@ -40,15 +37,10 @@
       "legend": {"title": "Age Group"},
       "scale": {"scheme": "tableau20"}
     },
-    "opacity": {
-      "condition": {"param": "age_group", "value": 1},
-      "value": 0.2
-    },
     "tooltip": [
       {"field": "year", "type": "temporal", "title": "Year", "format": "%Y"},
       {"field": "age_group", "type": "nominal", "title": "Age Group"},
       {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
     ]
-
   }
 }

@@ -44,6 +44,7 @@
         </div>
         
         <div id="multiseries_line"></div>
+        <!-- <div id="linechart"></div> -->
 
         <div class="two-column-container">
             <div class="left-text">
@@ -110,6 +111,11 @@
 
         var vg_2 = "js/multiseries_line.json";
         vegaEmbed("#multiseries_line", vg_2).then(function(result) {
+
+        }).catch(console.error);
+
+        var vg_3 = "js/linechart.json";
+        vegaEmbed("#linechart", vg_3).then(function(result) {
 
         }).catch(console.error);
 
