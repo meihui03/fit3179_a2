@@ -32,7 +32,7 @@
           "scale": {
             "type": "threshold",
             "domain": [500, 1500, 5000, 10000],
-            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603", "#662506"]
           },
           "legend": {
             "title": "Donations per 10,000 population"
