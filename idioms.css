@@ -7,14 +7,6 @@
     text-align: center; 
 }
 
-/* Styling for the main title (h1) */
-.page h1 {
-    font-size: 35px; 
-    color: #080808; /* Ensure it's visible and matches other text */
-    margin-bottom: 20px; 
-    font-weight: bold; /* Makes the title stand out */
-}
-
 /* Styling for paragraphs */
 .page p {
     font-size: 18px;
@@ -29,6 +21,11 @@
     font-size: 45px; 
     color: #080808; /* Ensure it's visible and matches other text */
     margin-bottom: 20px; 
+    font-weight: 700; /* Bold weight */
+}
+
+.page h2{
+    font-size: 25px; 
     font-weight: 700; /* Bold weight */
 }
 
@@ -64,7 +61,7 @@
 #description {
     width: 35%; /* Takes up 35% of the container */
     text-align: left; /* Align text to the left */
-    font-size: 16px;
+    font-size: 14px;
     color: #333; /* Ensures good contrast for text */
     line-height: 1.6; /* Improves readability */
     font-family: Arial, sans-serif;
