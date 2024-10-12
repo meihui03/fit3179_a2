@@ -76,6 +76,8 @@
             <div id="lolilpopchart"></div>
         </div>
 
+        <div id="piechart"></div>
+
         <!-- <div id="bloodtype_chart"></div>
 
         <div id="lolilpopchart"></div> -->
@@ -116,6 +118,11 @@
 
         var vg_3 = "js/linechart.json";
         vegaEmbed("#linechart", vg_3).then(function(result) {
+
+        }).catch(console.error);
+
+        var vg_4 = "js/piechart.json";
+        vegaEmbed("#piechart", vg_4).then(function(result) {
 
         }).catch(console.error);
 
