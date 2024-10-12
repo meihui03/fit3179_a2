@@ -16,6 +16,16 @@
       "groupby": ["year", "age_group"]
     }
   ],
+  "params": [
+    {
+      "name": "age_group_selection",
+      "select": {
+        "type": "point", 
+        "fields": ["age_group"]
+      },
+      "bind": "legend"
+    }
+  ],
   "mark": {
     "type": "line",
     "point": {"filled": false, "fill": "white"}
@@ -36,6 +46,13 @@
       "type": "nominal",
       "legend": {"title": "Age Group"},
       "scale": {"scheme": "tableau20"}
+    },
+    "opacity": {
+      "condition": {
+        "param": "age_group_selection",
+        "value": 1
+      },
+      "value": 0.2
     },
     "tooltip": [
       {"field": "year", "type": "temporal", "title": "Year", "format": "%Y"},
