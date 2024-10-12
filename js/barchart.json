@@ -1,0 +1,103 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Horizontal Lollipop chart showing blood donations by donation type for each state, sorted in ascending order of total donations",
+    "data": {
+      "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/donation_results_by_state_and_type.csv"
+    },
+    "width": 300,
+    "height": 400,
+    "params": [
+      {
+        "name": "State",
+        "value": "Johor",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", 
+            "Pahang", "Perak", "Pulau Pinang", "Sabah", "Sarawak", 
+            "Selangor", "Terengganu", "W.P. Kuala Lumpur"
+          ],
+          "name": "Select State: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "datum.state == State"  
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "rule",
+          "strokeWidth": 2,
+          "tooltip": true,
+          "color": "gray"
+        },
+        "encoding": {
+          "y": {
+            "field": "Blood Donation Type",
+            "type": "nominal",
+            "axis": {
+              "title": "Blood Donation Type"
+            },
+            "sort": {
+              "field": "Total Donations",
+              "order": "ascending"
+            }
+          },
+          "x": {
+            "field": "Total Donations",
+            "type": "quantitative",
+            "axis": {
+              "title": "Total Donations"
+            },
+            "x2": {"value": 0}
+          },
+          "color": {
+            "field": "Blood Donation Type",
+            "type": "nominal",
+            "scale": {
+              "range": ["#6B5B95", "#FF6F61", "#92A8D1", "#034F84", "#009688"]
+            }
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "circle",
+          "size": 200,
+          "tooltip": true
+        },
+        "encoding": {
+          "y": {
+            "field": "Blood Donation Type",
+            "type": "nominal",
+            "axis": {
+              "title": "Blood Donation Type"
+            },
+            "sort": {
+              "field": "Total Donations",
+              "order": "descending"
+            }
+          },
+          "x": {
+            "field": "Total Donations",
+            "type": "quantitative",
+            "axis": {
+              "title": "Total Donations"
+            }
+          },
+          "color": {
+            "field": "Blood Donation Type",
+            "type": "nominal"
+          }
+        }
+      }
+    ],
+    "config": {
+      "background": null,
+      "view": {"stroke": "transparent"}
+    }
+  }
+  

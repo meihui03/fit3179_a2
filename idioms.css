@@ -72,7 +72,7 @@
 }
 
 /* Individual pie chart styling */
-#lolilpopchart, #bloodtype_chart {
+#lolilpopchart, #bloodtype_chart , #barchart{
     width: 45%; /* Each pie chart takes about half the space */
     margin: 0; /* Reset margin for side by side layout */
     transform: translateX(0); /* Remove extra transform */
