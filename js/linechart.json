@@ -1,147 +1,53 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state.csv"
+    "url": "https://raw.githubusercontent.com/meihui03/fit3179_a2/refs/heads/main/data/newdonors_state_aggregated_by_month.csv"
   },
   "width": 900,
   "height": 400,
+  "background": "transparent",
+  "transform": [
+    {
+      "filter": "(datum.state != 'Malaysia') && (datum.year >= 2014)"
+    },
+    {
+      "calculate": "toDate(datum.year, datum.month)",
+      "as": "date"
+    },
+    {
+      "aggregate": [{
+        "op": "sum",
+        "field": "donations",
+        "as": "total_donations"
+      }],
+      "groupby": ["date", "age_group"]
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": {"filled": false, "fill": "white"}
+  },
   "encoding": {
     "x": {
       "field": "date",
       "type": "temporal",
-      "axis": {
-        "title": "Date"
-      }
-    }
-  },
-  "transform": [
-    {
-      "filter": "datum.state != 'Malaysia' && year(datum.date) >= 2014"
+      "axis": {"title": "Date"}
     },
-    {
-      "fold": [
-        "17-24",
-        "25-29",
-        "30-34",
-        "35-39",
-        "40-44",
-        "45-49",
-        "50-54",
-        "55-59",
-        "60-64",
-        "other"
-      ],
-      "as": ["age_group", "donations"]
-    }
-  ],
-  "layer": [
-    {
-      "encoding": {
-        "y": {
-          "field": "donations",
-          "type": "quantitative",
-          "axis": {
-            "title": "Total Donations"
-          }
-        },
-        "color": {
-          "field": "age_group",
-          "type": "nominal",
-          "legend": {
-            "title": "Age Group"
-          }
-        }
-      },
-      "layer": [
-        {
-          "mark": "line"
-        },
-        {
-          "transform": [
-            {
-              "filter": {
-                "param": "hover",
-                "empty": false
-              }
-            }
-          ],
-          "mark": "point"
-        }
-      ]
+    "y": {
+      "field": "total_donations",
+      "type": "quantitative",
+      "axis": {"title": "Total Donations"}
     },
-    {
-      "transform": [
-        {
-          "pivot": "age_group",
-          "value": "donations",
-          "groupby": ["date"]
-        }
-      ],
-      "mark": "rule",
-      "encoding": {
-        "opacity": {
-          "condition": {
-            "value": 0.3,
-            "param": "hover",
-            "empty": false
-          },
-          "value": 0
-        },
-        "tooltip": [
-          {
-            "field": "17-24",
-            "type": "quantitative"
-          },
-          {
-            "field": "25-29",
-            "type": "quantitative"
-          },
-          {
-            "field": "30-34",
-            "type": "quantitative"
-          },
-          {
-            "field": "35-39",
-            "type": "quantitative"
-          },
-          {
-            "field": "40-44",
-            "type": "quantitative"
-          },
-          {
-            "field": "45-49",
-            "type": "quantitative"
-          },
-          {
-            "field": "50-54",
-            "type": "quantitative"
-          },
-          {
-            "field": "55-59",
-            "type": "quantitative"
-          },
-          {
-            "field": "60-64",
-            "type": "quantitative"
-          },
-          {
-            "field": "other",
-            "type": "quantitative"
-          }
-        ]
-      },
-      "params": [
-        {
-          "name": "hover",
-          "select": {
-            "type": "point",
-            "fields": ["date"],
-            "nearest": true,
-            "on": "pointerover",
-            "clear": "pointerout"
-          }
-        }
-      ]
-    }
-  ]
+    "color": {
+      "field": "age_group",
+      "type": "nominal",
+      "legend": {"title": "Age Group"},
+      "scale": {"scheme": "tableau20"}
+    },
+    "tooltip": [
+      {"field": "date", "type": "temporal", "title": "Date", "format": "%Y-%m"},
+      {"field": "age_group", "type": "nominal", "title": "Age Group"},
+      {"field": "total_donations", "type": "quantitative", "title": "Total Donations"}
+    ]
+  }
 }
