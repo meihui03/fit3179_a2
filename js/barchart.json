@@ -58,7 +58,7 @@
             "field": "Blood Donation Type",
             "type": "nominal",
             "scale": {
-              "range": ["#6B5B95", "#FF6F61", "#92A8D1", "#034F84", "#009688"]
+              "range": ["#6B5B95", "#FF6F61", "#92A8D1", "#034F84"]
             }
           }
         }

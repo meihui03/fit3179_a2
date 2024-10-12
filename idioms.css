@@ -90,6 +90,25 @@
     font-weight: bold;
 }
 
+.darkblue-text {
+    color: #034F84;
+    font-weight: bold;
+}
+
+.purple-text {
+    color: #6B5B95;
+    font-weight: bold;
+}
+
+.orangered-text {
+    color: #FF6F61;
+    font-weight: bold;
+}
+
+.bluepastel-text{
+    color: #92A8D1;
+    font-weight: bold;
+}
 .green-text {
     color: rgb(15, 183, 15);
     font-weight: bold;
