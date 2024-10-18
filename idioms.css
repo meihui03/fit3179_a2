@@ -151,6 +151,7 @@
     line-height: 1.6;         /* Improve readability with better line spacing */
 }
 
+/* container for text side by side */
 .two-column-container {
     display: flex;           /* Flexbox layout for two columns */
     justify-content: space-between;  /* Distribute space between columns */
@@ -161,7 +162,7 @@
     margin: 0 auto; /* Center the container */
 }
 
-/* Wrapper to align pie charts side by side */
+/* Wrapper to align bar n lolilpop charts side by side */
 .charts-container {
     display: flex;
     justify-content: space-between; /* Adjust spacing between the charts */

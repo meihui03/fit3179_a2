@@ -24,8 +24,6 @@
             <p>The darkest shade, particularly in the area of Peninsular Malaysia, such as <span class="darkbrown-text">Kuala Lumpur</span>, indicates the <span class="darkbrown-text">highest donation rates</span>. Kuala Lumpur benefits from better accessibility to blood donation centers, a larger urban population, and more established healthcare infrastructures that encourage higher donation participation. Following closely is <span class="brown-text">Melaka</span>, which also shows <span class="brown-text">high donation rates</span> due to similar factors contributing to an active donor base.</p>
                 
             <p>In contrast, regions in East Malaysia, including Sabah and Sarawak, are displayed in lighter shades. This suggests lower donation rates, potentially due to challenges posed by geographic isolation, lower population density, and limited access to medical facilities.</p>
-                        
-            <!-- <p>The donation rates in East Malaysia, while moderate, reveal a gap compared to the more densely populated regions in the west. This discrepancy may also highlight the logistical difficulties in organizing large-scale blood donation campaigns in these areas.</p> -->
 
         </div>
         
@@ -44,7 +42,6 @@
         </div>
         
         <div id="multiseries_line"></div>
-        <!-- <div id="linechart"></div> -->
 
         <div class="two-column-container">
             <div class="left-text">
@@ -64,25 +61,11 @@
             </div>
             
         </div>
-        
-        <!-- <div class="piecharts-container">
-            <div id="location_piechart"></div>
-            <div id="type_blood_donation_piechart"></div>
-        </div> -->
-
-        <!-- <div id="bloodtype_isotype"></div> -->
-
+    
         <div class="charts-container">
             <div id="bloodtype_chart"></div>
-            <!-- <div id="lolilpopchart"></div> -->
             <div id="barchart"></div>
         </div>
-
-        <!-- <div id="barchart"></div> -->
-
-        <!-- <div id="bloodtype_chart"></div>
-
-        <div id="lolilpopchart"></div> -->
 
 
           <p class="left-aligned-links">
@@ -118,30 +101,20 @@
 
         }).catch(console.error);
 
-        var vg_3 = "js/linechart.json";
-        vegaEmbed("#linechart", vg_3).then(function(result) {
+        // var vg_3 = "js/linechart.json";
+        // vegaEmbed("#linechart", vg_3).then(function(result) {
 
-        }).catch(console.error);
+        // }).catch(console.error);
 
         var vg_4 = "js/barchart.json";
         vegaEmbed("#barchart", vg_4).then(function(result) {
 
         }).catch(console.error);
 
-        // var vg_3 = "js/location_piechart.json";
-        // vegaEmbed("#location_piechart", vg_3).then(function(result) {
+        // var vg_6 = "js/lolilpopchart.json";
+        // vegaEmbed("#lolilpopchart", vg_6).then(function(result) {
 
         // }).catch(console.error);
-
-        // var vg_4 = "js/bloodtype_piechart.json";
-        // vegaEmbed("#type_blood_donation_piechart", vg_4).then(function(result) {
-
-        // }).catch(console.error);
-
-        var vg_6 = "js/lolilpopchart.json";
-        vegaEmbed("#lolilpopchart", vg_6).then(function(result) {
-
-        }).catch(console.error);
 
         var vg_7 = "js/bloodtype_chart.json";
         vegaEmbed("#bloodtype_chart", vg_7).then(function(result) {
